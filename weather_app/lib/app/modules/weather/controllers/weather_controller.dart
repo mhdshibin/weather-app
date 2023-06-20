@@ -60,7 +60,17 @@ class WeatherController extends GetxController {
     if (cDegrees != null) fDegrees = cDegrees! * (9 / 5) + 32;
     toggleValue = value;
     toggleValue ? suffixChar = '°C' : suffixChar = '°F';
+    unitConversion();
     update();
+  }
+
+  void unitConversion() {
+    if (degree != null)
+      for (var i = 0; i < 5; i++) {
+        !toggleValue
+            ? degree![i] = degree![i] * (9 / 5) + 32
+            : degree![i] = ((degree![i] - 32) * 5 / 9);
+      }
   }
 
   onOptionSelected(int value) {

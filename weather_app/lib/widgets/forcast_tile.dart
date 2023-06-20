@@ -27,7 +27,7 @@ class _ForcastTileWidgetState extends State<ForcastTileWidget> {
       // dense: true,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       leading: Text(widget.day),
-      trailing: Text("${widget.degree}°"),
+      trailing: Text("${widget.degree.toStringAsFixed(2)}°"),
       title: widget.wIcon,
     );
   }
