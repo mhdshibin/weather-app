@@ -178,15 +178,20 @@ class WeatherView extends GetView<WeatherController> {
             ],
           ),
           Container(
-            height: Get.height * 0.8,
-            child: ListView.builder(itemCount: 7, itemBuilder: (context, index) {
-              // return Container();
-              return ListTile(
-                  title: TextButton(
-                      onPressed: controller.onOptionSelected(index),
-                      child: Text(controller.options[index])));
-            }),
-          )
+            height: Get.height * 0.5,
+            child: ListView.builder(
+                itemCount: 7,
+                itemBuilder: (context, index) {
+                  // return Container();
+                  return ListTile(
+                      title: TextButton(
+                          onPressed: () {
+                            controller.onOptionSelected(index);
+                          },
+                          child: Text(controller.options[index])));
+                }),
+          ),
+          Text('Alternatively, you can utilize the search box above as well'),
         ],
       ),
     );
